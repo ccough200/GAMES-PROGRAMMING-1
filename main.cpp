@@ -514,15 +514,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCmdLin
 							iterB++;
 					}
 
-					for(iterB = aEnemyProjectile.begin(); iterB != aEnemyProjectile.end();) {
-						if ((*iter)->collidedWith((*iter)->getBoundingRect(), (*iterB)->getBoundingRect())) {
-							erase = true;
-							iterB = aEnemyProjectile.erase(iterB); // Erase enemy projectile
-						}
-						else
-							iterB++;
-					}
-
 					if(erase || (*iter)->getSpritePos().y < 0 - (*iter)->getSTHeight())
 						iter = aPlayerProjectile.erase(iter); // Erase player projectile
 					else {
